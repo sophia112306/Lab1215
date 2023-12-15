@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<head></head>
+<body>
+    <script>
+    	function getUserInput() {
+            
+            var userInput1 = prompt("Enter your first input:", "");
+
+            var userInput2 = prompt("Enter your second input:", "");
+
+            
+            if (parseFloat(userInput1) > parseFloat(userInput2)) {
+                document.body.style.backgroundColor = "lightblue";
+                document.body.innerHTML = "<p>" + userInput1 + " > " + userInput2 + "</p>";
+            } else if (parseFloat(userInput2) > parseFloat(userInput1)) {
+                document.body.style.backgroundColor = "orange";
+                document.body.innerHTML = "<p>" + userInput2 + " > " + userInput1 + "</p>";
+            } else {
+                document.body.style.backgroundColor = "lightyellow";
+                document.body.innerHTML = "<p>" + userInput1 + " = = " + userInput2 + "</p>";
+            }
+
+            
+            var showButton1 = document.createElement("button");
+            showButton1.innerHTML = "Show 1st Input";
+            showButton1.onclick = function() {
+                alert("1st Input: " + userInput1);
+            };
+            document.body.appendChild(showButton1);
+
+            var showButton2 = document.createElement("button");
+            showButton2.innerHTML = "Show 2nd Input";
+            showButton2.onclick = function() {
+                alert("2nd Input: " + userInput2);
+            };
+            document.body.appendChild(showButton2);
+        }
+
+        
+        window.onload = getUserInput;
+    </script>
+</body>
+</html>
